@@ -1,0 +1,62 @@
+#login-header {
+    font-size: 4em;
+    text-align: center;
+}
+
+.login-form-header {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+button {
+    background-color: #dfdfdf;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    color: black;
+    border-radius: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.content {
+    background-color: #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.content {
+    padding: 0px 16px 16px 16px;
+    min-height: 95vh;
+    width: 500px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#forgot-pass {
+    float: right;
+}
+
+div a:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 1px;
+  }
+
+a:hover {
+    color:black;
+}
