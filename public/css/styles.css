@@ -22,6 +22,7 @@ button {
 
 button:hover {
     opacity: 0.8;
+    color: blue;
 }
 
 .content {
@@ -55,8 +56,17 @@ div a:after {
     display: block;
     height: 0;
     width: 1px;
+    padding-top: 10px;
   }
 
+a:link, a:visited {
+    color: black;
+}
+
 a:hover {
-    color:black;
+    color:dodgerblue;
+}
+
+#home-text {
+    text-align: center;
 }
