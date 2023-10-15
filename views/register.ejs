@@ -1,12 +1,16 @@
-<h1> Sign up form </h1>
-  
-<form action="/register" method="POST">
-    <input type="text" name="username" 
-        placeholder="username">
-    <input type="password" name="password" 
-        placeholder="password">
-    <button>Submit</button>
-</form>
-
-<a href="/login">Login</a>
-<a href="/home">Home</a>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<div class="content">
+    <h1 class="title-header">Sign Up</h1> 
+    <form action="/register" method="POST">
+        <label for="username" class="form-header">Username</label>
+        <input type="text" name="username" placeholder="choose a username"
+            required>
+        <label for="password" class="form-header">Password</label>
+        <input type="password" name="password" placeholder="choose a password"
+            required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <a href="/login">Login</a>
+    <a href="/home">Home</a>
+</div>

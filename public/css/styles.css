@@ -1,9 +1,9 @@
-#login-header {
+.title-header {
     font-size: 4em;
     text-align: center;
 }
 
-.login-form-header {
+.form-header {
     font-size: 2em;
     font-weight: bold;
 }
