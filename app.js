@@ -9,14 +9,14 @@ let express = require("express"),
 const { nextTick } = require("process");
 const User = require("./model/User");
 let app = express();
-// Uncomment line below and add your own secret string
+//Uncomment line below and add your own secret string
 // let secretString = "";
 
 app.use(express.static("public"));
 
 //connection to MongoDB + Atlas
 // Uncomment line below and add your database connection string
-//const dbConStr = '';
+// const dbConStr = '';
 mongoose.connect(dbConStr).then(() => {
   console.log("Connected to MongoDB");
 }).catch((err) => {
@@ -44,8 +44,8 @@ app.get("/", function (req, res){
   res.render("home");
 });
 
-app.get("/secret", isLoggedIn, function(req, res){
-  res.render("secret");
+app.get("/secret", isLoggedIn, function(req, res) {
+  res.render('secret'); 
 });
 
 app.get("/register", function(req, res){
@@ -92,6 +92,23 @@ app.get("/logout", function(req, res) {
 app.get("/reset_pass", function(req,res) {
   res.render("reset_pass");
 })
+
+app.post("/reset", function(req, res){
+  try {
+    const user = User.findOne({username: req.body.username})
+    if (user) {
+      user.update({
+        password: req.body.password
+      }).then(() => {
+        res.redirect("/login");
+      });
+    } else {
+      res.status(400).json({error: "user doesn't exist"});
+    }
+  } catch (error) {
+    res.status(400).json({error});
+  }
+});
 
 function isLoggedIn(req, res, next){
   if (req.isAuthenticated()) return next;
