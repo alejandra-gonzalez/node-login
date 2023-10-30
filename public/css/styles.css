@@ -70,3 +70,12 @@ a:hover {
 #home-text {
     text-align: center;
 }
+
+i {
+    position: absolute;
+    margin: 60px 300px;
+}
+
+.icon {
+    pointer-events: auto;
+}
