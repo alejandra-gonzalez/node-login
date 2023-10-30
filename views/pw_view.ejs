@@ -1,0 +1,16 @@
+<script>
+    function toggle() {
+        let temp = document.getElementsByClassName("password")[0];
+        let show = document.getElementsByClassName("fa-eye")[0];
+        let hide = document.getElementsByClassName("fa-eye-slash")[0];
+        if (temp.type === "password") {
+            temp.type = "text";
+            hide.style.opacity = "1";
+            show.style.opacity = "0";
+        }
+        else {
+            temp.type = "password";
+            hide.style.opacity = "0";
+            show.style.opacity = "1";
+        }
+    }</script>

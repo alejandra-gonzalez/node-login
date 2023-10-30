@@ -79,3 +79,7 @@ i {
 .icon {
     pointer-events: auto;
 }
+
+.fa-eye-slash{
+    opacity: 0;
+}
