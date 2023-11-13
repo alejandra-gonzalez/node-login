@@ -54,7 +54,7 @@ app.get("/register", function(req, res){
 
 app.post("/register", async(req, res) => {
   const user = await User.create({
-    username: req.body.username,
+    email: req.body.email,
     password: req.body.password
   });
   return res.status(200).json(user);
@@ -66,7 +66,7 @@ app.get("/login", function(req, res){
 
 app.post("/login", async function(req, res){
   try {
-    const user = await User.findOne({username: req.body.username})
+    const user = await User.findOne({email: req.body.email})
     if (user) {
       const result = req.body.password === user.password;
       if (result){
@@ -95,7 +95,7 @@ app.get("/reset_pass", function(req,res) {
 
 app.post("/reset", function(req, res){
   try {
-    const user = User.findOne({username: req.body.username})
+    const user = User.findOne({email: req.body.email})
     if (user) {
       user.update({
         password: req.body.password
